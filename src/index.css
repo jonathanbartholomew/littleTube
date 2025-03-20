@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 font-body;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff6b6b, #9381ff);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #e05050, #7f67ff);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+
+  /* Custom font setup */
+  .font-display {
+    font-family: "Comic Neue", "Comic Sans MS", cursive;
+  }
+}
+
+@layer components {
+  /* Header styling */
+  .app-header {
+    @apply bg-white py-4 px-4 flex justify-between items-center shadow-md;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom: 4px solid #f0f0f0;
+  }
+
+  /* Logo styling */
+  .logo-wrapper {
+    @apply flex items-center;
+  }
+
+  .logo-text {
+    @apply text-2xl font-bold ml-2;
+  }
+
+  .logo-text-little {
+    color: #ff6b6b;
+  }
+
+  .logo-text-tube {
+    color: #48cae4;
+  }
+
+  /* Parent mode button */
+  .parent-mode-button {
+    @apply bg-purple-500 text-white text-sm px-4 py-2 rounded-xl font-bold shadow-md;
+    transition: all 0.2s ease;
+  }
+
+  .parent-mode-button:hover {
+    @apply bg-purple-600 shadow-lg transform scale-105;
+  }
+
+  /* Category section */
+  .categories-section {
+    @apply my-6 px-4;
+  }
+
+  .section-title {
+    @apply text-xl font-bold mb-4 text-gray-800;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
+  }
+
+  .categories-grid {
+    @apply grid grid-cols-2 gap-4;
+  }
+
+  /* Category cards */
+  .category-card {
+    @apply bg-white p-5 rounded-3xl shadow-md cursor-pointer flex flex-col items-center;
+    border-width: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .category-card:hover {
+    @apply shadow-lg transform -translate-y-1;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1) translateY(-4px);
+    }
+    50% {
+      transform: scale(1.05) translateY(-4px);
+    }
+    100% {
+      transform: scale(1) translateY(-4px);
+    }
+  }
+
+  .category-songs {
+    border-color: #ffd166;
+  }
+
+  .category-animals {
+    border-color: #ff9e00;
+  }
+
+  .category-learning {
+    border-color: #76c893;
+  }
+
+  .category-cartoons {
+    border-color: #48cae4;
+  }
+
+  .category-icon {
+    @apply mb-3;
+  }
+
+  .category-title {
+    @apply text-lg font-bold text-center;
+  }
+
+  /* Featured videos section */
+  .featured-section {
+    @apply my-6 px-4;
+  }
+
+  .videos-grid {
+    @apply grid grid-cols-1 gap-6 sm:grid-cols-2;
+  }
+
+  /* Video cards */
+  .video-card {
+    @apply bg-white rounded-2xl shadow-md overflow-hidden border-4 border-gray-100;
+    transition: all 0.3s ease;
+  }
+
+  .video-card:hover {
+    @apply shadow-lg transform -translate-y-1;
+  }
+
+  .video-thumbnail {
+    @apply w-full relative pb-[56.25%];
+  }
+
+  .video-thumbnail img {
+    @apply absolute top-0 left-0 w-full h-full object-cover;
+  }
+
+  .video-info {
+    @apply p-3;
+  }
+
+  .video-title {
+    @apply font-bold text-base truncate;
+  }
+
+  /* Bottom navigation */
+  .bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-100 pt-3 pb-6 px-8 flex justify-between items-center;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center;
+    transition: all 0.2s ease;
+  }
+
+  .nav-item:hover {
+    @apply transform scale-110;
+  }
+
+  .nav-icon {
+    @apply text-gray-500;
+  }
+
+  .nav-label {
+    @apply text-xs mt-1 font-bold text-gray-500;
+  }
+
+  .nav-active .nav-icon,
+  .nav-active .nav-label {
+    @apply text-pink-500;
+  }
+}

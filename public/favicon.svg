@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- Star shape with pink fill and darker pink border -->
+  <path d="M12 2L14.8 8.25L21.5 9.14L16.75 14.05L17.8 20.9L12 17.66L6.2 20.9L7.25 14.05L2.5 9.14L9.2 8.25L12 2Z" 
+        fill="#FF6B6B" stroke="#E05050" stroke-width="1" stroke-linejoin="round"/>
+  
+  <!-- Play button perfectly centered in the star -->
+  <g transform="translate(12, 12) scale(0.8) translate(-12, -12)">
+    <path d="M9 7.5L16.5 12L9 16.5V7.5Z" 
+          fill="white" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
