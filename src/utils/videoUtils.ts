@@ -1,4 +1,3 @@
-// Function to generate YouTube thumbnail URL
 export const getYouTubeThumbnail = (videoId: string): string => {
   return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
 };
@@ -43,9 +42,8 @@ export const featuredVideos: VideoData[] = [
     category: "songs",
   },
   {
-    id: "g6CVApMxmqg",
-    title:
-      "Phonics, Counting, Colors + More Kids Learning Songs & Nursery Rhymes | Gracie’s Corner Compilation",
-    category: "songs",
+    id: "5nriOLIIWJw",
+    title: "Explore Nature with Elmo! | FOUR Sesame Street Full Episodes",
+    category: "cartoons",
   },
 ];

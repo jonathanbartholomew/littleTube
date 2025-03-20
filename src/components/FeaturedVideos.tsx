@@ -52,8 +52,8 @@ const FeaturedVideos: React.FC = () => {
       thumbnailUrl: "/api/placeholder/400/225",
     },
     {
-      id: "HP8wGlwLQpA",
-      title: "If You're Happy and You Know It",
+      id: "5nriOLIIWJw",
+      title: "Explore Nature with Elmo! | FOUR Sesame Street Full Episodes",
       thumbnailUrl: "/api/placeholder/400/225",
     },
   ];

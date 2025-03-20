@@ -16,22 +16,39 @@ import {
   getVideoBorderColor,
   getYouTubeThumbnail,
 } from "./utils/videoUtils";
+import VideoPage from "./components/VideoPage";
 
 function App() {
   const [activeNavItem, setActiveNavItem] = useState("home");
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const handleCategoryClick = (category: string) => {
     console.log(`Navigating to ${category} category`);
   };
 
   const handleVideoClick = (videoId: string) => {
-    console.log(`Playing video with ID: ${videoId}`);
+    setSelectedVideo(videoId);
+  };
+
+  const handleCloseVideo = () => {
+    setSelectedVideo(null);
   };
 
   const handleNavClick = (item: string) => {
     setActiveNavItem(item);
     console.log(`Navigating to ${item}`);
   };
+
+  // If a video is selected, show the video page
+  if (selectedVideo) {
+    return (
+      <VideoPage
+        videoId={selectedVideo}
+        onBack={handleCloseVideo}
+        onSelectVideo={setSelectedVideo}
+      />
+    );
+  }
 
   return (
     <div className="pb-24 min-h-screen">
